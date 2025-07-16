@@ -28,7 +28,7 @@ class YieldPredictor:
         self.model = grid_search.best_estimator_
         return grid_search.best_params_
 
-    def cross_validate(self, X, y, cv=5):
+    def cross_validate(self, X, y, cv=3):
         scores = cross_val_score(self.model, X, y, cv=cv, scoring='r2')
         return scores
 

@@ -1,4 +1,6 @@
 from app import create_app
+from flask_cors import CORS
+
 from app.services.prediction_services import PredictionService
 from app.utils.visualisation import (
     plot_actual_vs_predicted,
@@ -12,6 +14,8 @@ from app.utils.visualisation import (
 
 def main():
     app = create_app()
+    CORS(app, resources={r"/api/*": {"origins": "http://localhost:5174"}})  # Allow React frontend
+
     prediction_service = PredictionService()
     
     # Process and train
