@@ -39,7 +39,7 @@ function PredictForm() {
     setError(null);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/api/predict",
+        "https://caminova.onrender.com/api/predict",
         formData,
         {
           headers: { "Content-Type": "application/json" },

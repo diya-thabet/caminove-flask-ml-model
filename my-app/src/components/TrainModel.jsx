@@ -11,7 +11,7 @@ function TrainModel() {
     setError(null);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:5000/api/train",
+        "https://caminova.onrender.com/api/train",
         {},
         {
           headers: { "Content-Type": "application/json" },
